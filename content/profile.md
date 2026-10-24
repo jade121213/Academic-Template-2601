@@ -4,7 +4,7 @@ brand: ALEX CHEN / RESEARCH
 theme: classic
 role: Researcher · Engineer · Creator
 tagline: Research for a more open and human-centered AI.
-photo: assets/portrait.svg
+photo: assets/images/academic-portrait.svg
 email: hello@example.com
 github: https://github.com/
 cv: https://example.com/cv.pdf
