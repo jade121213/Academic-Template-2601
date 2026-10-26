@@ -2,49 +2,62 @@
 
 **WISEROBOT STUDIO · Academic Portfolio**
 
-不会编程也能维护自己的学术网站：先 Fork 仓库，再修改 Markdown 并提交，网页即可自动更新。
+无需编程：**Fork 仓库 → 配置 GitHub Pages → 编辑 Markdown → 自动更新网站**。
 
-## 一、快速上手
+## 一、四步快速上手
 
 ### 01｜Fork 一份自己的学术网站
 
-![Fork 仓库中文示意图](docs/images/01-fork.svg)
-
 1. 登录 [GitHub](https://github.com/)，打开 [维思工坊学术网站仓库](https://github.com/jade121213/Template2601)。
 2. 点击右上角 **Fork（派生仓库）**。
-3. 在新页面选择自己的账号，可修改 **Repository name（仓库名称）**，然后点击 **Create fork（创建派生仓库）**。
-4. 完成后，就拥有了自己可以编辑的网站代码仓库。
 
-### 02｜开启并访问个人网站
+![实际截图：点击 Fork](assets/images/1.png)
 
-![Pages 设置中文示意图](docs/images/02.svg)
+3. 选择自己的账号，在 **Repository name（仓库名称）** 中填写想要的名称，再点击 **Create fork（创建派生仓库）**。
 
-1. 在自己的仓库中点击顶部 **Settings（设置）**，再点击左侧 **Pages**。
-2. 找到 **Build and deployment → Source**。**本模板已有 GitHub Actions 自动部署文件，请选择 GitHub Actions**。
-3. 返回 **Actions** 查看 **Deploy GitHub Pages** 是否成功；如果提示需要启用工作流，请按页面提示启用。
-4. 部署成功后，回到 **Settings → Pages**，点击 **Visit site** 或复制网站链接。
+![实际截图：填写仓库名称并创建 Fork](assets/images/2.png)
+
+4. 完成后，你就拥有了一份自己的仓库，后续修改只需要在自己的仓库操作。
+
+### 02｜部署并查看个人网站
+
+1. 在 **自己 Fork 后的仓库** 页面点击顶部 **Settings（设置）**，再点击左侧 **Pages**。
+
+![实际截图：进入 Settings 和 Pages](assets/images/3.png)
+
+2. 在 **Build and deployment（构建与部署）** 中配置网站发布方式。
+
+> **请注意：** 下面的三张截图演示的是 **Deploy from a branch（从分支发布）** 方法；截图中的 `master` 来自其他演示仓库。**当前 Template2601 已包含 GitHub Actions 自动部署文件** `.github/workflows/pages.yml`，所以更推荐你在 **Source** 下拉框中选择 **GitHub Actions**，然后进入 **Actions** 查看 `Deploy GitHub Pages` 是否运行成功。不要机械照搬截图中的 `master` 分支。
+
+如果你改用截图中的分支发布方式，需要从当前仓库的实际默认分支（通常是 `main`）选择 `/(root)` 并保存，且避免同时使用两种 Pages 部署方法。
+
+![实际截图：选择发布分支并点击 Save](assets/images/5.png)
+
+3. 保存设置后，GitHub 将开始构建发布；可在 **Actions** 页面查看运行状态。
+
+![实际截图：配置保存成功](assets/images/6.png)
+
+4. 部署成功后，进入 **Settings → Pages**，点击 **Visit site（访问网站）** 或网页链接。
+
+![实际截图：点击网站访问链接](assets/images/7.png)
 
 网站地址通常为：
 
 `https://你的用户名.github.io/仓库名/`
 
-> **重要：** 用户实际截图中展示的是另一种 **Deploy from a branch → master → /(root) → Save** 的部署方法。该方法适用于直接从分支发布的网站，但**本模板使用的是 GitHub Actions 工作流**。为避免重复部署或配置冲突，本教程以 GitHub Actions 为准。仓库默认分支可能是 `main`，请勿直接照搬截图中的 `master`。
+### 03｜修改个人简介、论文和项目
 
-### 03｜修改个人资料、论文和项目
-
-![编辑 Markdown 中文示意图](docs/images/04.svg)
-
-进入仓库的 `content/` 文件夹，打开相应文件，点击右上角**铅笔图标**编辑，最后点击 **Commit changes（提交更改）**。
+在 Fork 后的仓库里打开 `content/` 文件夹，点击需要修改的 Markdown 文件右上角铅笔图标。修改完成后点击 **Commit changes（提交更改）**。
 
 | 想修改的内容 | 对应文件 |
 |---|---|
-| 姓名、简介、头像和主题 | `content/profile.md` |
+| 姓名、简介、头像、主题 | `content/profile.md` |
 | 研究方向 | `content/research.md` |
-| 论文、PDF 和 DOI 链接 | `content/publications.md` |
-| 项目和作品图片 | `content/projects.md` |
-| 联系方式 | `content/contact.md` |
+| 论文、DOI、PDF 下载链接 | `content/publications.md` |
+| 项目及展示图片 | `content/projects.md` |
+| 邮箱和联系方式 | `content/contact.md` |
 
-例如，在 `content/profile.md` 中修改对应字段：
+例如在 `content/profile.md` 中修改对应字段（**保留文件原本的 `---` 分隔符**）：
 
 ```yaml
 name: Li Ming
@@ -53,15 +66,11 @@ theme: classic
 photo: assets/images/my-photo.jpg
 ```
 
-**注意：保留 `profile.md` 文件原有的 `---` 分隔符和字段格式。**
+### 04｜上传图片和学术论文 PDF
 
-### 04｜上传图片或论文 PDF
-
-![上传图片与 PDF 中文示意图](docs/images/05.svg)
-
-1. 打开 `assets/images/`，点击 **Add file → Upload files** 上传个人照片及项目图片。
-2. 论文 PDF 可上传到 `assets/`，请确认文件允许公开分享。
-3. 在对应 Markdown 中填写路径，例如：
+1. 打开 `assets/images/`，选择 **Add file → Upload files（添加文件 → 上传文件）**，上传头像和项目图片。
+2. 公开分享的论文 PDF 可以放到 `assets/` 文件夹。
+3. 在对应 Markdown 中填写文件路径或论文地址：
 
 ```md
 Image: assets/images/my-project.jpg
@@ -69,19 +78,19 @@ PDF: assets/my-paper.pdf
 GitHub: https://github.com/用户名/项目名
 ```
 
-提交文件后，**GitHub Actions 会自动更新网站**，无需手动更改 HTML、CSS 或 JavaScript 代码。
+提交更改后，网站会自动重新发布，**不需要修改前端代码**。
 
 ## 二、常见问题
 
-**Fork 后网站打不开？** 请先在自己仓库的 `Settings → Pages` 中启用 **GitHub Actions**，并检查 **Actions** 工作流是否成功。
+**Fork 后打不开网站？** 先检查自己仓库的 **Settings → Pages** 是否启用了发布，再在 **Actions** 查看部署任务。
 
-**网页还是旧内容？** 先确认修改已经 Commit，再等待部署完成后刷新，检查图片文件名与路径是否一致。
+**更新 Markdown 后网页没变？** 确认已提交修改，等待部署完成再刷新网页；检查图片路径、文件名大小写是否准确。
 
-**需要购买服务器吗？** GitHub Pages 可用于托管符合其政策的静态网页，独立域名等可选服务可能收费。
+**需要购买服务器吗？** 使用 GitHub Pages 托管符合平台政策的静态网站，不需要另购传统 Web 服务器。
 
-**如何切换风格？** 编辑 `content/profile.md` 的 `theme:`，可选 `classic`、`dark` 或 `nature`，目前主要调整配色。
+**可以换颜色吗？** 在 `content/profile.md` 中把 `theme:` 设置为 `classic`、`dark` 或 `nature`。目前主要改变配色。
 
-**隐私注意：** 公开仓库的 Markdown、论文和图片可被其他人查看，请勿上传敏感资料或无权公开的文件。
+**隐私提醒：** 公开仓库中的照片、论文与 Markdown 内容可能被所有人访问，请不要上传敏感信息或未经授权公开的资料。
 
 ---
 
