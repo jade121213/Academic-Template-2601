@@ -1,6 +1,6 @@
-# 维思工坊｜个人学术主页使用指南（Fork 版）
+# Scholar Classic｜维思工坊个人学术主页使用指南
 
-**WISEROBOT STUDIO · Academic Portfolio**
+**WISEROBOT STUDIO · Academic Template 2601 · Scholar Classic**
 
 无需编程：**Fork 仓库 → 配置 GitHub Pages → 编辑 Markdown → 自动更新网站**。
 
