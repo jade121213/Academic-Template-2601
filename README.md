@@ -8,6 +8,10 @@
 
 ### 01｜Fork 一份自己的学术网站
 
+**操作示意图**
+
+![Fork 操作示意图](docs/images/01-fork.svg)
+
 1. 登录 [GitHub](https://github.com/)，打开 [维思工坊学术网站仓库](https://github.com/jade121213/Template2601)。
 2. 点击右上角 **Fork（派生仓库）**。
 
@@ -20,6 +24,12 @@
 4. 完成后，你就拥有了一份自己的仓库，后续修改只需要在自己的仓库操作。
 
 ### 02｜部署并查看个人网站
+
+**操作示意图（GitHub Actions）**
+
+![GitHub Pages 配置示意](docs/images/02.svg)
+
+![网站访问示意](docs/images/03.svg)
 
 1. 在 **自己 Fork 后的仓库** 页面点击顶部 **Settings（设置）**，再点击左侧 **Pages**。
 
@@ -47,6 +57,10 @@
 
 ### 03｜修改个人简介、论文和项目
 
+**操作示意图**
+
+![修改 Markdown 内容示意](docs/images/04.svg)
+
 在 Fork 后的仓库里打开 `content/` 文件夹，点击需要修改的 Markdown 文件右上角铅笔图标。修改完成后点击 **Commit changes（提交更改）**。
 
 | 想修改的内容 | 对应文件 |
@@ -67,6 +81,10 @@ photo: assets/images/my-photo.jpg
 ```
 
 ### 04｜上传图片和学术论文 PDF
+
+**操作示意图**
+
+![上传图片与 PDF 示意](docs/images/05.svg)
 
 1. 打开 `assets/images/`，选择 **Add file → Upload files（添加文件 → 上传文件）**，上传头像和项目图片。
 2. 公开分享的论文 PDF 可以放到 `assets/` 文件夹。
